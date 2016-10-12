@@ -17,7 +17,7 @@ var RootComponent = (function () {
 RootComponent = __decorate([
     core_1.Component({
         selector: 'root-component',
-        template: '<h1>My First Angular App</h1>'
+        template: '<h1>My First Angular client App</h1>'
     }),
     __metadata("design:paramtypes", [])
 ], RootComponent);

@@ -25,6 +25,9 @@ gulp.task('movePublicFolder',function(){
 });
 
 gulp.task('moveLibs', function (done) {
+
+    gulp.src(['node_modules/rxjs/**/*']).pipe(gulp.dest('.dist/server/public/javascript/libs/rxjs'));
+
     return gulp.src([
       'node_modules/core-js/client/shim.min.js',
       'node_modules/zone.js/dist/zone.js',
@@ -37,8 +40,7 @@ gulp.task('moveLibs', function (done) {
       'node_modules/@angular/platform-browser-dynamic/bundles/platform-browser-dynamic.umd.js',
       'node_modules/@angular/http/bundles/http.umd.js',
       'node_modules/@angular/router/bundles/router.umd.js',
-      'node_modules/@angular/forms/bundles/forms.umd.js',
-      'node_modules/rxjs/bundles/Rx.min.js'
+      'node_modules/@angular/forms/bundles/forms.umd.js'
       
     ]).pipe(gulp.dest('.dist/server/public/javascript/libs'));
 

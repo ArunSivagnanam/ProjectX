@@ -1,6 +1,7 @@
 "use strict";
 var customerRouter = require("./routes/customerRouter");
 var indexRouter = require("./routes/indexRouter");
+var serviceRouter = require("./routes/serviceRouter");
 var path = require("path");
 var bodyParser = require("body-parser");
 var express = require("express");
@@ -25,6 +26,7 @@ var Server = (function () {
     Server.prototype.configureRoutes = function (app) {
         app.use(express.static(path.join(__dirname, "public")));
         app.use("/", indexRouter);
+        app.use("/service", serviceRouter);
         app.use("/customer", customerRouter);
         // mount more routers here
         // e.g. app.use("/organisation", organisationRouter);

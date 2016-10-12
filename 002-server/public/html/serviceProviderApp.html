@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Angular QuickStart</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 1. Load libraries -->
+     <!-- Polyfill(s) for older browsers -->
+    <script src="javascript/libs/shim.min.js"></script>
+    <script src="javascript/libs//zone.js"></script>
+    <script src="javascript/libs/Reflect.js"></script>
+    <script src="javascript/libs/system.src.js"></script>
+    <!-- 2. Configure SystemJS -->
+    <script src="javascript/serviceProviderApp.module/systemjs.config.js"></script>
+    <script>
+      System.import('app').catch(function(err){ console.error(err); });
+    </script>
+  </head>
+  <!-- 3. Display the application -->
+  <body>
+    <root-component>Loading...</root-component>
+  </body>
+</html>

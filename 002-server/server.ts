@@ -2,6 +2,7 @@
 import {Application} from '~express/lib/application';
 import customerRouter = require("./routes/customerRouter");
 import indexRouter = require("./routes/indexRouter");
+import serviceRouter = require("./routes/serviceRouter");
 import path = require('path');
 
 const bodyParser = require("body-parser");
@@ -30,8 +31,9 @@ export class Server {
 
         app.use(express.static(path.join(__dirname, "public")));
 
-        app.use("/", indexRouter );
-        app.use("/customer", customerRouter );
+         app.use("/", indexRouter );
+         app.use("/service", serviceRouter );
+         app.use("/customer", customerRouter );
         
         // mount more routers here
         // e.g. app.use("/organisation", organisationRouter);
