@@ -4,6 +4,8 @@ import customerRouter = require("./routes/customerRouter");
 import indexRouter = require("./routes/indexRouter");
 import serviceRouter = require("./routes/serviceRouter");
 import path = require('path');
+import Mongoose = require('mongoose');
+var Configs = require('./config.ts');
 
 const bodyParser = require("body-parser");
 const express = require("express");
@@ -50,7 +52,8 @@ export class Server {
     }
 
     public run() {
-        this.app.listen(this.port);  
+        Mongoose.connect(Configs.dbconnect);
+        this.app.listen(this.port);
     }
 }
 
