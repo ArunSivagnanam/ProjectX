@@ -18,8 +18,7 @@
             '@angular/router': 'javascript/libs/router.umd.js',
             '@angular/forms': 'javascript/libs/forms.umd.js',
             // other libraries
-            'rxjs': 'javascript/libs/rxjs',
-            'angular-in-memory-web-api': 'libs:angular-in-memory-web-api',
+            'rxjs': 'javascript/libs/rxjs'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
