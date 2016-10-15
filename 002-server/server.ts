@@ -16,6 +16,8 @@ export class Server {
     constructor(private app: Application, private port: number) {
         this.configureMiddleware(app);
         this.configureRoutes(app);
+
+        
     }
 
     /**
