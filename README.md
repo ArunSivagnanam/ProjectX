@@ -1,7 +1,7 @@
 ## iLoveRep
 
-npm install gulp --global
-npm install typescript --global
+# Install dependencies
+npm install typings gulp typescript --global
 
 stå i rod:
 npm install

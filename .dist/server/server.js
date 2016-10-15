@@ -3,6 +3,8 @@ var customerRouter = require("./routes/customerRouter");
 var indexRouter = require("./routes/indexRouter");
 var serviceRouter = require("./routes/serviceRouter");
 var path = require("path");
+var Mongoose = require("mongoose");
+var Configs = require('./config.ts');
 var bodyParser = require("body-parser");
 var express = require("express");
 var Server = (function () {
@@ -39,6 +41,7 @@ var Server = (function () {
         });
     };
     Server.prototype.run = function () {
+        Mongoose.connect(Configs.dbconnect);
         this.app.listen(this.port);
     };
     return Server;
