@@ -4,7 +4,7 @@ var indexRouter = require("./routes/indexRouter");
 var serviceRouter = require("./routes/serviceRouter");
 var path = require("path");
 var Mongoose = require("mongoose");
-var Configs = require('./config.ts');
+var config_1 = require("./config");
 var bodyParser = require("body-parser");
 var express = require("express");
 var Server = (function () {
@@ -41,7 +41,7 @@ var Server = (function () {
         });
     };
     Server.prototype.run = function () {
-        Mongoose.connect(Configs.dbconnect);
+        Mongoose.connect(config_1.Config.connectionString);
         this.app.listen(this.port);
     };
     return Server;

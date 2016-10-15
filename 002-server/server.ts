@@ -5,10 +5,12 @@ import indexRouter = require("./routes/indexRouter");
 import serviceRouter = require("./routes/serviceRouter");
 import path = require('path');
 import Mongoose = require('mongoose');
-var Configs = require('./config.ts');
+import {Config} from './config'
 
 const bodyParser = require("body-parser");
 const express = require("express");
+
+
 
 export class Server {
     /**
@@ -18,8 +20,6 @@ export class Server {
     constructor(private app: Application, private port: number) {
         this.configureMiddleware(app);
         this.configureRoutes(app);
-
-        
     }
 
     /**
@@ -52,7 +52,7 @@ export class Server {
     }
 
     public run() {
-        Mongoose.connect(Configs.dbconnect);
+        Mongoose.connect(Config.connectionString);
         this.app.listen(this.port);
     }
 }
