@@ -1,8 +1,12 @@
-## iLoveRep
+# iLoveRep Real time Website
 
-# Install dependencies
+### Installation
+#### Indstall global dependencies
 npm install typings gulp typescript --global
 
-stå i rod:
+#### Install local dependencies
+From root folder do:
 npm install
 
+#### Run server
+gulp
