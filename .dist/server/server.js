@@ -1,12 +1,13 @@
 "use strict";
-var customerRouter = require("./routes/customerRouter");
+///<reference path="./typings/index.d.ts"/>
+var express = require("express");
+var authRouter = require("./routes/authRouter");
 var indexRouter = require("./routes/indexRouter");
 var serviceRouter = require("./routes/serviceRouter");
 var path = require("path");
 var Mongoose = require("mongoose");
+var BodyParser = require("body-parser");
 var config_1 = require("./config");
-var bodyParser = require("body-parser");
-var express = require("express");
 var Server = (function () {
     /**
      * @param app - express application
@@ -22,14 +23,14 @@ var Server = (function () {
      * @param app - express application
      */
     Server.prototype.configureMiddleware = function (app) {
-        app.use(bodyParser.json());
-        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(BodyParser.json());
+        app.use(BodyParser.urlencoded({ extended: true }));
     };
     Server.prototype.configureRoutes = function (app) {
         app.use(express.static(path.join(__dirname, "public")));
         app.use("/", indexRouter);
         app.use("/service", serviceRouter);
-        app.use("/customer", customerRouter);
+        app.use("/auth", authRouter);
         // mount more routers here
         // e.g. app.use("/organisation", organisationRouter);
     };

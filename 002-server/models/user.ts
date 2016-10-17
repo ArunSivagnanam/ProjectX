@@ -2,12 +2,15 @@
 import Mongoose = require('mongoose');
 
 export interface IUser extends Mongoose.Document {
-  name: string; 
-  somethingElse?: number; 
+  userName: string; 
+  password : string
 };
 
-export const UserSchema = new Mongoose.Schema({
-  name: {type:String, required: true},
-  somethingElse: Number,
-});
+interface IUserModel extends IUser, Mongoose.Document {}
+
+export const User = Mongoose.model<IUserModel>('User', new Mongoose.Schema({
+    userName: String,
+    password:  String,
+    
+}));
 
