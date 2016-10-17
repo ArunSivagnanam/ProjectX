@@ -1,12 +1,15 @@
 # iLoveRep Real time Website
 
 ### Installation
-#### Indstall global dependencies
+#### Indstall global node package dependencies
 npm install typings gulp typescript --global
 
-#### Install local dependencies
+#### Install local node package dependencies
 From project-root and 002-server folder do:
 npm install
+
+#### Download MongoDB
+https://www.mongodb.com/download-center
 
 #### Add to environtment variables
 ##### On Windows add the following to end of path
