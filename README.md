@@ -11,7 +11,7 @@ From project-root and 002-server folder do:
     npm install
 
 #### Download MongoDB
-    https://www.mongodb.com/download-center
+https://www.mongodb.com/download-center
 
 #### Add to MongoDB to environtment variables
 ##### On Windows add the following to end of path
