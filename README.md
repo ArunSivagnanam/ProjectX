@@ -11,7 +11,7 @@ npm install
 #### Download MongoDB
 https://www.mongodb.com/download-center
 
-#### Add to environtment variables
+#### Add to MongoDB to environtment variables
 ##### On Windows add the following to end of path
 ;C:\Program Files\MongoDB\Server\3.2\bin
 
