@@ -5,8 +5,12 @@
 npm install typings gulp typescript --global
 
 #### Install local dependencies
-From root folder do:
+From project-root and 002-server folder do:
 npm install
+
+#### Add to environtment variables
+##### On Windows add the following to end of path
+;C:\Program Files\MongoDB\Server\3.2\bin
 
 #### Run server
 gulp
