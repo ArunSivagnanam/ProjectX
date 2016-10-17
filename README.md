@@ -13,11 +13,11 @@ From project-root and 002-server folder do:
 #### Download MongoDB
 https://www.mongodb.com/download-center
 
-#### Add to MongoDB to environtment variables
+#### Add MongoDB to environtment variables
 ##### On Windows add the following to end of path
     ;C:\Program Files\MongoDB\Server\3.2\bin
 
-And create folder
+##### And create folder
 
     C:\data\db\
 #### Restart Terminal and run
