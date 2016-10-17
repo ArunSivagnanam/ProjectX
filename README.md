@@ -6,7 +6,7 @@
     npm install typings gulp typescript --global
 
 #### Install local node package dependencies
-From project-root and 002-server folder do:
+From project-root folder do:
 
     npm install
 
@@ -20,6 +20,7 @@ https://www.mongodb.com/download-center
 ##### And create folder
 
     C:\data\db\
+
 #### Restart Terminal and run
     mongod
 
