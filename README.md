@@ -20,5 +20,5 @@ https://www.mongodb.com/download-center
 #### Restart Terminal and run
     mongod
 
-#### Run server
+#### Run server (from project-root directory)
     gulp
