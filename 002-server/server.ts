@@ -7,7 +7,7 @@ import path = require('path');
 import Mongoose = require('mongoose');
 import BodyParser = require('body-parser');
 import {Config} from './config'
-
+import {Shops} from './models/shop'
 
 
 export class Server {
@@ -18,8 +18,6 @@ export class Server {
     constructor(private app: express.Application, private port: number) {
         this.configureMiddleware(app);
         this.configureRoutes(app);
-
-        
     }
 
     /**
@@ -49,6 +47,21 @@ export class Server {
             err.status = 404;
             next(err);
         });
+    }
+
+    public API(app : express.Application){
+
+        // Add Shop
+        app.post('/api/shops', function(req, res){
+            var shop = req.body;
+            Shops.addShop(shop, function(err, shop){
+                if(err){
+                    throw err;
+                }
+                res.json(shop);
+            });
+        });
+
     }
 
     public run() {

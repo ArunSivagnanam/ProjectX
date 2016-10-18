@@ -8,6 +8,7 @@ var path = require("path");
 var Mongoose = require("mongoose");
 var BodyParser = require("body-parser");
 var config_1 = require("./config");
+var shop_1 = require("./models/shop");
 var Server = (function () {
     /**
      * @param app - express application
@@ -39,6 +40,18 @@ var Server = (function () {
             var error = new Error("Not Found");
             err.status = 404;
             next(err);
+        });
+    };
+    Server.prototype.API = function (app) {
+        // Add Shop
+        app.post('/api/shops', function (req, res) {
+            var shop = req.body;
+            shop_1.Shops.addShop(shop, function (err, shop) {
+                if (err) {
+                    throw err;
+                }
+                res.json(shop);
+            });
         });
     };
     Server.prototype.run = function () {
