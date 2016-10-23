@@ -3,11 +3,11 @@ import express = require("express");
 import authRouter = require("./routes/authRouter");
 import indexRouter = require("./routes/indexRouter");
 import serviceRouter = require("./routes/serviceRouter");
+import shop = require('./models/shop');
 import path = require('path');
 import Mongoose = require('mongoose');
 import BodyParser = require('body-parser');
 import {Config} from './config'
-import {Shops} from './models/shop'
 
 
 export class Server {
@@ -36,6 +36,7 @@ export class Server {
          app.use("/", indexRouter );
          app.use("/service", serviceRouter );
          app.use("/auth", authRouter );
+         app.use("/api/shops", shop );
         
         // mount more routers here
         // e.g. app.use("/organisation", organisationRouter);
