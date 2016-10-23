@@ -49,20 +49,7 @@ export class Server {
         });
     }
 
-    public API(app : express.Application){
-
-        // Add Shop
-        app.post('/api/shops', function(req, res){
-            var shop = req.body;
-            Shops.addShop(shop, function(err, shop){
-                if(err){
-                    throw err;
-                }
-                res.json(shop);
-            });
-        });
-
-    }
+    
 
     public run() {
         Mongoose.connect(Config.connectionString);
