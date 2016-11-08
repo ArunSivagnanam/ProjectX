@@ -4,6 +4,6 @@ var Config = (function () {
     }
     return Config;
 }());
-exports.Config = Config;
 Config.connectionString = "127.0.0.1:27017/projectx";
+exports.Config = Config;
 ;
