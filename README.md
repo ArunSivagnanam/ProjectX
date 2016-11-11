@@ -22,6 +22,7 @@ https://www.mongodb.com/download-center
     C:\data\db\
 
 #### Restart Terminal and run
+
     mongod
 
 #### Run server (from project-root directory)
