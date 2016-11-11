@@ -3,10 +3,10 @@ import express = require("express");
 import {Shop,IShop} from '../models/shop';
 import BodyParser = require('body-parser');
 
-let authShop = express.Router();
+let shopsRouter = express.Router();
 
 
-authShop.post('/addShop', (request: express.Request & BodyParser.ParsedRaw, response: express.Response) => {
+shopsRouter.post('/addShop', (request: express.Request & BodyParser.ParsedRaw, response: express.Response) => {
    
    let shop = new Shop(request.body);
 
@@ -24,4 +24,4 @@ authShop.post('/addShop', (request: express.Request & BodyParser.ParsedRaw, resp
 
 
 
-export = authShop;
+export = shopsRouter;

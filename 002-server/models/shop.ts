@@ -1,6 +1,6 @@
 ///<reference path="../typings/index.d.ts"/>
 import Mongoose = require('mongoose');
-import express = require("express");
+//import express = require("express");
 
 export interface IShop extends Mongoose.Document {
   name: string; 
@@ -10,12 +10,12 @@ export interface IShop extends Mongoose.Document {
   logo_url : string;
   banner_url : string;
   shop_url : string;
-  create_date: Date;
+//  create_date: Date;
 };
 
 interface IShopModel extends IShop, Mongoose.Document {}
 
-export const Shop = Mongoose.model<IShopModel>('User', new Mongoose.Schema({
+export const Shop = Mongoose.model<IShopModel>('Shop', new Mongoose.Schema({
     name: String, 
     address : String,
     description : String,
@@ -23,6 +23,6 @@ export const Shop = Mongoose.model<IShopModel>('User', new Mongoose.Schema({
     logo_url : String,
     banner_url : String,
     shop_url : String,
-    create_date: Date,
+//    create_date: Date,
     
 }));
