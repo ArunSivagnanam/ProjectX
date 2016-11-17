@@ -4,6 +4,7 @@ var express = require("express");
 var authRouter = require("./routes/authRouter");
 var indexRouter = require("./routes/indexRouter");
 var serviceRouter = require("./routes/serviceRouter");
+var shopsRouter = require("./routes/shopsRouter");
 // import shop = require('./models/shop');
 var path = require("path");
 var Mongoose = require("mongoose");
@@ -32,7 +33,7 @@ var Server = (function () {
         app.use("/", indexRouter);
         app.use("/service", serviceRouter);
         app.use("/auth", authRouter);
-        // app.use("/api/shops", shop );
+        app.use("/api/shops", shopsRouter);
         // mount more routers here
         // e.g. app.use("/organisation", organisationRouter);
     };

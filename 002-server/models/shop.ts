@@ -3,26 +3,27 @@ import Mongoose = require('mongoose');
 //import express = require("express");
 
 export interface IShop extends Mongoose.Document {
-  name: string; 
   address : string;
-  description : string;
-  supported_phones : string;
-  logo_url : string;
-  banner_url : string;
-  shop_url : string;
-//  create_date: Date;
+  name : string;
+  cvr : number;
+  phoneNumber : number;
+  gpsLocation : [number, number];
+  openingHours : [string,string,string,string,string,string,string];
+  logoUrl : string;
+  storeFrontPictureUrl : string;
+  create_date: Date;
 };
 
 interface IShopModel extends IShop, Mongoose.Document {}
 
 export const Shop = Mongoose.model<IShopModel>('Shop', new Mongoose.Schema({
-    name: String, 
     address : String,
-    description : String,
-    supported_phones : String,
-    logo_url : String,
-    banner_url : String,
-    shop_url : String,
-//    create_date: Date,
-    
+    name : String,
+    cvr : Number,
+    phoneNumber : Number,
+    gpsLocation : [Number, Number],
+    openingHours : [String,String,String,String,String,String,String],
+    logoUrl : String,
+    storeFrontPictureUrl : String,
+    create_date: Date
 }));
